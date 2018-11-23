@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-6">
+<h1>Search Movies</h1>
+<div class="input-group">
+  <input [(ngModel)]="keyword"
+         class="form-control">
+  <div class="input-group-append">
+    <button (click)="search(keyword)" class="btn btn-primary">
+      Search
+    </button>
+  </div>
+</div>
+
+<h2>Search Results</h2>
+<ul class="list-group">
+  <li (click)="details(m.imdbID)"
+      *ngFor="let m of movies"
+      class="list-group-item">
+    <img src="{{m.Poster}}"
+         width="30px">
+    {{m.Title}}
+    <i (click)="likes(m)"
+       class="fa fa-star float-right"></i>s
+  </li>
+</ul>
+  </div>
+
+  <div class="col-6">
+    <h2>
+      {{movie.Title}}
+    </h2>
+    <img src="{{movie.Poster}}"/>
+    <p>{{movie.Plot}}</p>
+  </div>
+
+</div>
